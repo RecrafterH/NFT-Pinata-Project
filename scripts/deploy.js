@@ -27,12 +27,13 @@ const main = async () => {
     tokenUri = await handleTokenUris();
   }
   let puppyUri = tokenUri[0];
-  console.log(puppyUri);
   const PuppyContract = await ethers.getContractFactory("PuppyNft");
   const puppyContract = await PuppyContract.deploy(puppyUri);
   await puppyContract.deployed();
   console.log("Contract deployed at: ", puppyContract.address);
 };
+
+// 0x27009dd8A713Bb43AF6B1927BD84adA8de769d2b
 
 const handleTokenUris = async () => {
   tokenUri = [];
